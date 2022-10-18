@@ -29,13 +29,13 @@ stages:
       size: 101544958334
       nfiles: 1914
     - path: stages/2_build.sh
-      md5: d6aea26d356f4dc180d1177aadc9c91f
-      size: 242
+      md5: bafd9b7cc89c321b5b48d66bae6c0b07
+      size: 284
     - path: stages/zinc2parquet.py
       md5: 7d621c1375fd98b39a6c60a752976498
       size: 1491
     outs:
-    - path: zinc.parquet
+    - path: brick/zinc.parquet
       md5: 7eb3a14caf5b488296355129862d62d0.dir
       size: 45291563749
       nfiles: 38

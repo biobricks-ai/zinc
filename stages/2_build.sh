@@ -8,4 +8,5 @@ downloadpath="$localpath/download"
 echo "Download path: $downloadpath"
 
 # run conversion to parquet
-python ./stages/zinc2parquet.py $downloadpath/ ./zinc.parquet
+mkdir -p $localpath/brick
+python ./stages/zinc2parquet.py $downloadpath/ $localpath/brick/zinc.parquet

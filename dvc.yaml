@@ -15,4 +15,4 @@ stages:
       - stages/2_build.sh
       - stages/zinc2parquet.py
     outs:
-      - zinc.parquet
+      - brick/zinc.parquet
