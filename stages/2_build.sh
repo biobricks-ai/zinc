@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-#unzip file
+#define path
 localpath=$(pwd)
 echo "Local path: $localpath"
 
 downloadpath="$localpath/download"
 echo "Download path: $downloadpath"
 
-# run convertion to parquet
+# run conversion to parquet
 python ./stages/zinc2parquet.py $downloadpath/ ./zinc.parquet
