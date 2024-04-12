@@ -1,41 +1,32 @@
+---
 schema: '2.0'
 stages:
-  1-stage:
-    cmd: Rscript stages/01-stage.R
-    deps:
-    - path: stages/01-stage.R
-      md5: c468dc14527e00c339f146e1dba2bd3b
-      size: 118
-    outs:
-    - path: data/mtcars.parquet
-      md5: 77cf29accf9535522fad7db1486eff9a
-      size: 6243
-  download:
-    cmd: bash stages/1_download.sh
-    deps:
-    - path: stages/1_download.sh
-      md5: 7334e8c4ff158b65e2dd931768a19eb3
-      size: 145715
-    outs:
-    - path: download
-      md5: 3eb6281cda3e45a4f0486c1636401373.dir
-      size: 101544958334
-      nfiles: 1914
   brick:
     cmd: bash stages/2_build.sh
     deps:
-    - path: download
-      md5: 3eb6281cda3e45a4f0486c1636401373.dir
-      size: 101544958334
+    - md5: 3eb6281cda3e45a4f0486c1636401373.dir
       nfiles: 1914
-    - path: stages/2_build.sh
-      md5: bafd9b7cc89c321b5b48d66bae6c0b07
+      path: download
+      size: 101544958334
+    - md5: bafd9b7cc89c321b5b48d66bae6c0b07
+      path: stages/2_build.sh
       size: 284
-    - path: stages/zinc2parquet.py
-      md5: 7d621c1375fd98b39a6c60a752976498
+    - md5: 7d621c1375fd98b39a6c60a752976498
+      path: stages/zinc2parquet.py
       size: 1491
     outs:
-    - path: brick/zinc.parquet
-      md5: 7eb3a14caf5b488296355129862d62d0.dir
-      size: 45291563749
+    - md5: 7eb3a14caf5b488296355129862d62d0.dir
       nfiles: 38
+      path: brick/zinc.parquet
+      size: 45291563749
+  download:
+    cmd: bash stages/1_download.sh
+    deps:
+    - md5: 7334e8c4ff158b65e2dd931768a19eb3
+      path: stages/1_download.sh
+      size: 145715
+    outs:
+    - md5: 3eb6281cda3e45a4f0486c1636401373.dir
+      nfiles: 1914
+      path: download
+      size: 101544958334
