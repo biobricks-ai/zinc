@@ -1,32 +1,32 @@
----
 schema: '2.0'
 stages:
   brick:
     cmd: bash stages/2_build.sh
     deps:
-    - md5: 3eb6281cda3e45a4f0486c1636401373.dir
-      nfiles: 1914
-      path: download
+    - path: download
+      md5: 3eb6281cda3e45a4f0486c1636401373.dir
       size: 101544958334
-    - md5: bafd9b7cc89c321b5b48d66bae6c0b07
-      path: stages/2_build.sh
+      nfiles: 1914
+    - path: stages/2_build.sh
+      md5: bafd9b7cc89c321b5b48d66bae6c0b07
       size: 284
-    - md5: 7d621c1375fd98b39a6c60a752976498
-      path: stages/zinc2parquet.py
+    - path: stages/zinc2parquet.py
+      md5: 7d621c1375fd98b39a6c60a752976498
       size: 1491
     outs:
-    - md5: 7eb3a14caf5b488296355129862d62d0.dir
-      nfiles: 38
-      path: brick/zinc.parquet
-      size: 45291563749
+    - path: brick/zinc.parquet
+      hash: md5
+      md5: a20e480a4f4750b12c20a278c2a4b771.dir
+      size: 44644840157
+      nfiles: 37
   download:
     cmd: bash stages/1_download.sh
     deps:
-    - md5: 7334e8c4ff158b65e2dd931768a19eb3
-      path: stages/1_download.sh
+    - path: stages/1_download.sh
+      md5: 7334e8c4ff158b65e2dd931768a19eb3
       size: 145715
     outs:
-    - md5: 3eb6281cda3e45a4f0486c1636401373.dir
-      nfiles: 1914
-      path: download
+    - path: download
+      md5: 3eb6281cda3e45a4f0486c1636401373.dir
       size: 101544958334
+      nfiles: 1914
