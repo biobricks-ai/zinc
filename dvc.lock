@@ -16,8 +16,8 @@ stages:
     outs:
     - path: brick/zinc.parquet
       hash: md5
-      md5: a20e480a4f4750b12c20a278c2a4b771.dir
-      size: 44644840157
+      md5: 631e2e3dcbe3a856b9613d1ec41f9a38.dir
+      size: 44580221848
       nfiles: 37
   download:
     cmd: bash stages/1_download.sh
