@@ -2,9 +2,9 @@
 # see https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#pipelines-files-dvcyaml
 stages:
   download:
-    cmd: bash stages/1_download.sh 
+    cmd: bash stages/1_download.py 
     deps:
-      - stages/1_download.sh
+      - stages/1_download.py
     outs:
       - download
   

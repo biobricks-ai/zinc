@@ -20,11 +20,13 @@ stages:
       size: 44580221848
       nfiles: 37
   download:
-    cmd: bash stages/1_download.sh
+    cmd: bash stages/1_download.py
     deps:
-    - path: stages/1_download.sh
-      md5: 7334e8c4ff158b65e2dd931768a19eb3
-      size: 145715
+    - path: stages/1_download.py
+      hash: md5
+      md5: 0ef839c72bc7e909cdc5958c6247c22a
+      size: 1542
+      isexec: true
     outs:
     - path: download
       md5: 3eb6281cda3e45a4f0486c1636401373.dir
